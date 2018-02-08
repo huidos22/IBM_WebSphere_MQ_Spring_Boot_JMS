@@ -1,4 +1,4 @@
-package com.lzp4ever.config;
+package com.ibm.sova.jms.config;
 
 import com.ibm.mq.jms.MQQueueConnectionFactory;
 import com.ibm.msg.client.wmq.WMQConstants;

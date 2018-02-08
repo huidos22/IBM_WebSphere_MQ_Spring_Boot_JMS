@@ -1,4 +1,4 @@
-package com.ibm.sova;
+package com.ibm.sova.jms;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
