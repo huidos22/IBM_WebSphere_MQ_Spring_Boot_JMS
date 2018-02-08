@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.jms.connection.CachingConnectionFactory;
 import org.springframework.jms.connection.JmsTransactionManager;
 import org.springframework.jms.connection.UserCredentialsConnectionFactoryAdapter;
@@ -16,6 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
+//@PropertySource(value={"classpath:application.yml"})
 public class JmsConfig {
     @Value("${project.mq.host}")
     private String host;
@@ -25,10 +27,10 @@ public class JmsConfig {
     private String queueManager;
     @Value("${project.mq.channel}")
     private String channel;
-    @Value("${project.mq.username}")
-    private String username;
-    @Value("${project.mq.password}")
-    private String password;
+//    @Value("${project.mq.username}")
+//    private String username;
+//    @Value("${project.mq.password}")
+//    private String password;
     @Value("${project.mq.queue}")
     private String queue;
     @Value("${project.mq.receive-timeout}")
@@ -53,8 +55,8 @@ public class JmsConfig {
     @Bean
     UserCredentialsConnectionFactoryAdapter userCredentialsConnectionFactoryAdapter(MQQueueConnectionFactory mqQueueConnectionFactory) {
         UserCredentialsConnectionFactoryAdapter userCredentialsConnectionFactoryAdapter = new UserCredentialsConnectionFactoryAdapter();
-        userCredentialsConnectionFactoryAdapter.setUsername(username);
-        userCredentialsConnectionFactoryAdapter.setPassword(password);
+//        userCredentialsConnectionFactoryAdapter.setUsername(username);
+//        userCredentialsConnectionFactoryAdapter.setPassword(password);
         userCredentialsConnectionFactoryAdapter.setTargetConnectionFactory(mqQueueConnectionFactory);
         return userCredentialsConnectionFactoryAdapter;
     }

@@ -1,4 +1,4 @@
-package com.lzp4ever;
+package com.ibm.sova.jms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

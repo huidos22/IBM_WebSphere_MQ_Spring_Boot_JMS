@@ -1,4 +1,4 @@
-package com.lzp4ever;
+package com.ibm.sova;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,22 +20,22 @@ public class IbmWesphereMqSpringBootJmsDemoApplicationTests {
     }
 
     @Test
-    private void sendMsg() {
+    public void sendMsg() {
         // replace first param with the queue name
-        jmsOperations.convertAndSend("<queueName>", "hello world");
+        jmsOperations.convertAndSend("SOVA.INPUT", "hello world");
     }
 
     @Test
-    private void receiveMsg() {
+    public void receiveMsg() {
         // replace first param with the queue name
-        jmsOperations.receiveAndConvert("<queueName>");
+        jmsOperations.receiveAndConvert("SOVA.OUTPUT");
     }
 
     @Test
     @Transactional(value = "jmsTransactionManager")
-    private void transaction() {
+    public void transaction() {
         // replace first param with the queue name
-        jmsOperations.convertAndSend("<queueName>", "transaction test");
+        jmsOperations.convertAndSend("SOVA.INPUT", "transaction test");
     }
 
 

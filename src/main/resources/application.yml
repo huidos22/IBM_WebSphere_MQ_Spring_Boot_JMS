@@ -1,9 +1,10 @@
 project:
   mq:
-    host: 192.168.1.180
-    port: 1416
-    queue-manager: QM
-    channel: mqm.SVRCONN   # SVRCONN
-    username: mqm
-    password: 123456
+    host: rchmfgd.pok.dst.ibm.com
+    port: 1420
+    queue-manager: DMQ001
+    channel: DMQ001.SERVER  # SVRCONN
+    #username: mqm
+    #password: 123456
     receive-timeout: 2000
+    queue: SOVA.INPUT
