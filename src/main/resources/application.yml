@@ -4,7 +4,10 @@ project:
     port: 1420
     queue-manager: DMQ001
     channel: DMQ001.SERVER  # SVRCONN
+    receive-timeout: 2000
+    queue.input: SOVA.INPUT
+    queue.input.alt: SOVA.INPUT.ALT
+    queue.output: SOVA.OUTPUT
+    queue.output.alt: SOVA.OUTPUT.ALT
     #username: mqm
     #password: 123456
-    receive-timeout: 2000
-    queue: SOVA.INPUT
